@@ -12,5 +12,11 @@ namespace Production.WriteModel.ProductionLine.Domain.ProductionLines.Exceptions
     {
         public override string Message =>ExceptionResource.ProductionLineTitleCantBeNullOrWhiteSpaceException;
     }
+
     
+
+         public class ProductionLineTitleIsDuplicatedException : DomainException
+    {
+        public override string Message => ExceptionResource.ProductionLineTitleIsDuplicatedException;
+    }
 }

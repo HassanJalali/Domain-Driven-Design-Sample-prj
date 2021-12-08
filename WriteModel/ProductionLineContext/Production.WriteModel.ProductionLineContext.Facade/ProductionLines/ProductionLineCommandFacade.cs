@@ -14,6 +14,8 @@ namespace Production.WriteModel.ProductionLineContext.Facade.ProductionLines
     {
         public ProductionLineCommandFacade(ICommandBus commandBus) : base(commandBus)
         {
+
+
         }
 
         public void CreateProductionLine(CreateProductionLineComand comand)

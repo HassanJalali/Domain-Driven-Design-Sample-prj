@@ -12,8 +12,9 @@ namespace Production.Persistence
 {
     public class ProductionDbContext : DbContextBase
     {
-        public ProductionDbContext(DbContextOptions opt) : base(opt)
+        public ProductionDbContext(DbContextOptions<ProductionDbContext> opt) : base(opt)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

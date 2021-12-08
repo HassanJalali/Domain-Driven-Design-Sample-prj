@@ -77,5 +77,14 @@ namespace Production.WriteModel.ProductionLine.Resources {
                 return ResourceManager.GetString("ProductionLineTitleCantBeNullOrWhiteSpaceException", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام خط تولید وارد شده تکراری می باشد..
+        /// </summary>
+        public static string ProductionLineTitleIsDuplicatedException {
+            get {
+                return ResourceManager.GetString("ProductionLineTitleIsDuplicatedException", resourceCulture);
+            }
+        }
     }
 }

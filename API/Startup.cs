@@ -39,7 +39,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddJsonOptions(options =>
-           options.JsonSerializerOptions.Converters.Add(new TimeSpanToStringConverter())); ;
+            options.JsonSerializerOptions.Converters.Add(new TimeSpanToStringConverter())); ;
             var assemblyDiscovery = new AssemblyDiscovery("Production*.dll");
             var registrars = assemblyDiscovery.DiscoverInstances<IRegistrar>("Production").ToList();
             foreach (var registrar in registrars)

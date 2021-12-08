@@ -1,20 +1,24 @@
 ﻿using Production.Framework.Core.Domain;
 using Production.Framework.Domain;
 using Production.WriteModel.ProductionLine.Domain.ProductionLines.Exceptions;
+using Production.WriteModel.ProductionLine.Domain.ProductionLines.Services;
 
 namespace Production.WriteModel.ProductionLine.Domain.ProductionLines
 {
     public class ProductionLine : EntityBase , IAggrigateRoot
     {
-        protected ProductionLine()
-        {
+        private readonly IProductionLineTitleDuplicationChecker _productionLineTitleDuplicationChecker;
 
-        }
-        public ProductionLine(int costCenter, string productionLineTitle)
+        public ProductionLine(int costCenter, string productionLineTitle , IProductionLineTitleDuplicationChecker productionLineTitleDuplicationChecker)
         {
             SetCostCenter(costCenter);
             SetProductionLineTitle(productionLineTitle);
+            _productionLineTitleDuplicationChecker = productionLineTitleDuplicationChecker;
         }   
+         protected ProductionLine()
+          {
+
+          }
 
         private void SetProductionLineTitle(string productionLineTitle)
         {
@@ -23,12 +27,17 @@ namespace Production.WriteModel.ProductionLine.Domain.ProductionLines
                 throw new ProductionLineTitleCantBeNullOrWhiteSpaceException();
             }
 
+            if (_productionLineTitleDuplicationChecker.IsDuplicated(productionLineTitle))
+            {
+                throw new ProductionLineTitleIsDuplicatedException();
+            }
+
             ProductionLineTitle = productionLineTitle;
         }
 
         private void SetCostCenter(int costCenter)
         {
-            if (costCenter != 4)
+            if (costCenter.ToString().Length > 4)
             {
                 throw new CostCenterNumberCantBeLessOrBiggerThan4();
             }

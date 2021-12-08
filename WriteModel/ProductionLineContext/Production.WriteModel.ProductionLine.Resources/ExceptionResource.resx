@@ -123,4 +123,7 @@
   <data name="ProductionLineTitleCantBeNullOrWhiteSpaceException" xml:space="preserve">
     <value>نام خط تولید الزامی می باشد</value>
   </data>
+  <data name="ProductionLineTitleIsDuplicatedException" xml:space="preserve">
+    <value>نام خط تولید وارد شده تکراری می باشد.</value>
+  </data>
 </root>

@@ -19,8 +19,14 @@
   <ItemGroup>
     <ProjectReference Include="..\Framework\Production.Framework.AssemblyHelper\Production.Framework.AssemblyHelper.csproj" />
     <ProjectReference Include="..\Framework\Production.Framework.Core\Production.Framework.Core.csproj" />
+    <ProjectReference Include="..\Framework\Production.Framework.DependencyInjection\Production.Framework.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Framework\Production.Framework.Facade\Production.Framework.Facade.csproj" />
     <ProjectReference Include="..\WriteModel\Production.Persistence\Production.Persistence.csproj" />
+    <ProjectReference Include="..\WriteModel\ProductionLineContext\Production.WriteModel.ProductionLineContext.AppService\Production.WriteModel.ProductionLineContext.AppService.csproj" />
+    <ProjectReference Include="..\WriteModel\ProductionLineContext\Production.WriteModel.ProductionLineContext.Configuration\Production.WriteModel.ProductionLineContext.Configuration.csproj" />
+    <ProjectReference Include="..\WriteModel\ProductionLineContext\Production.WriteModel.ProductionlineContext.Domain.Services\Production.WriteModel.ProductionlineContext.Domain.Services.csproj" />
     <ProjectReference Include="..\WriteModel\ProductionLineContext\Production.WriteModel.ProductionLineContext.Facade.Contract\Production.WriteModel.ProductionLineContext.Facade.Contract.csproj" />
+    <ProjectReference Include="..\WriteModel\ProductionLineContext\Production.WriteModel.ProductionLineContext.Facade\Production.WriteModel.ProductionLineContext.Facade.csproj" />
   </ItemGroup>
 
 </Project>

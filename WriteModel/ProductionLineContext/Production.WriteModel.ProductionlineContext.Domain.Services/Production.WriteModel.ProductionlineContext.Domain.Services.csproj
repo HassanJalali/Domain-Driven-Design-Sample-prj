@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ProductionLines\" />
+    <ProjectReference Include="..\Production.WriteModel.ProductionLine.Domain\Production.WriteModel.ProductionLine.Domain.csproj" />
   </ItemGroup>
 
 </Project>

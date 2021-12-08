@@ -7,17 +7,21 @@ namespace Production.WriteModel.ProductionLineContext.AppService.ProductionLines
     public class CreateProductionLineComandHandler : ICommandHandler<CreateProductionLineComand>
     {
         private readonly IProductionLineRepository _repository;
+        private readonly IProductionLineTitleDuplicationChecker _productionLineTitleDuplicationChecker;
 
-        public CreateProductionLineComandHandler(IProductionLineRepository repository)
+        public CreateProductionLineComandHandler(IProductionLineRepository repository ,IProductionLineTitleDuplicationChecker productionLineTitleDuplicationChecker)
         {
             _repository = repository;
+            _productionLineTitleDuplicationChecker = productionLineTitleDuplicationChecker;
         }
 
         public void Execute(CreateProductionLineComand command)
         {
             var productionLine = new Production.WriteModel.ProductionLine.Domain.ProductionLines
                                                           .ProductionLine(command.CostCenter,
-                                                           command.ProductionLineTitle);
+                                                           command.ProductionLineTitle,
+                                                           _productionLineTitleDuplicationChecker
+                                                           );
 
 
             _repository.Create(productionLine);
